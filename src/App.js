@@ -12,7 +12,9 @@ function App() {
   return (
     <div className="app">
       <div className="overlay" />
-      <ProfileCard />
+      <div className="profileCardContainer gradient-border">
+        <ProfileCard />
+      </div>
     </div>
   );
 }
