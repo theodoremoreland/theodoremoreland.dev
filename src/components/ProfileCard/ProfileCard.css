@@ -1,0 +1,15 @@
+/* .profileCardContainer {
+    height: 100vh;
+} */
+
+.profileCard {
+    background-color: rgba(87, 87, 87, 0.808);
+}
+
+.profilePic {
+    height: 25vh;
+}
+
+.bio {
+    font-family: accent;
+}
