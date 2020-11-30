@@ -1,19 +1,18 @@
 /* ___________________ FONTS ____________________________ */
 
-
 @font-face {
     font-family: header;
-    src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf');
+    src: url('./fonts/Raleway/Raleway-Bold.ttf');
 }
   
 @font-face {
     font-family: accent;
-    src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Medium.ttf');
+    src: url('./fonts/Raleway/Raleway-Medium.ttf');
 }
     
 @font-face {
     font-family: accent-light;
-    src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf');
+    src: url('./fonts/Raleway/Raleway-Thin.ttf');
 }
 
 html, body {
@@ -28,9 +27,16 @@ html, body {
     color: rgb(226, 226, 226);
 }
 
+.overlay {
+    background-color: #28313b7a;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
 .app {
     height: 100vh;
     width: 100vw;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }

@@ -1,9 +1,6 @@
 // React
 import React from 'react';
 
-// Bootstrap
-import Container from 'react-bootstrap/Container';
-
 // Custom Components
 import ProfileCard from './components/ProfileCard/ProfileCard';
 
@@ -14,6 +11,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
+      <div className="overlay" />
       <ProfileCard />
     </div>
   );
