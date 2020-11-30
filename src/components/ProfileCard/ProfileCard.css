@@ -1,13 +1,21 @@
-/* .profileCardContainer {
-    height: 100vh;
-} */
-
 .profileCard {
-    background-color: rgba(87, 87, 87, 0.808);
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    height: 65vh;
+}
+
+.profileContainer {
+    text-align: center;
+}
+
+.timelineContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
 }
 
 .profilePic {
-    height: 25vh;
+    width: 250px;
 }
 
 .bio {
