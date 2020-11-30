@@ -49,7 +49,7 @@ html, body {
 
 /* _____________________________GRADIENT BORDER________________________________ */
 
-.gradient-border {
+/* .gradient-border {
     --borderWidth: 3px;
     background: #1D1F20;
     position: relative;
@@ -80,4 +80,4 @@ html, body {
       100% {
           background-position: 0% 50%;
       }
-  }
+  } */
