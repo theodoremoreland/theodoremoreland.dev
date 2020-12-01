@@ -1,14 +1,8 @@
 .timeline {
     overflow-y: scroll;
     background-color: rgb(209, 209, 209);
-    color: rgb(26, 26, 26);
+    color: rgb(0, 0, 0);
     height: 65vh;
     width: 50vw;
-}
-
-.projectCard {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+    background-color: rgba(240, 248, 255, 0);
 }
