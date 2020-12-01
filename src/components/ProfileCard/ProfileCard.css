@@ -21,6 +21,7 @@
     width: 250px;
 }
 
-.bio {
+.profileBio {
+    margin-top: 15px;
     font-family: accent;
 }

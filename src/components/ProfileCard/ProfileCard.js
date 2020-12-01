@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 
 // Custom Components
-import Timeline from '../Timeline/Timeline';
+import Timeline from './Timeline/Timeline';
 
 // Custom styles
 import './ProfileCard.css';
@@ -24,9 +24,8 @@ export default function ProfileCard() {
                         <Card.Title className="profileTitle">Theodore Moreland</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted profileSubTitle">Software Engineer</Card.Subtitle>
                         <Image className="profilePic" src={profilePic} roundedCircle fluid/>
-                        <Card.Text className="text-muted bio">
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                        <Card.Text className="text-muted profileBio">
+                            @github.theodoremoreland
                         </Card.Text>
                     </Card.Body>
                 </Col>
