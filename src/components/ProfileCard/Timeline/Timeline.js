@@ -2,16 +2,33 @@
 import React from 'react';
 
 // Bootstrap
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 // Custom styles
 import './Timeline.css';
 
 
 export default function ProfileCard(props) {
+    const {content} = props;
 
     return (
         <div className="timeline">
-            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+            {   content !== undefined
+                    ? content.map(repo =>
+                        <Card className="projectCard">
+                        <Card.Img variant="top" src={repo.image} />
+                        <Card.Body>
+                            <Card.Title>{repo.name}</Card.Title>
+                            <Card.Text>
+                            
+                            {repo.desc}
+                            </Card.Text>
+                            <Button variant="primary">View on GitHub</Button>
+                        </Card.Body>
+                        </Card>)
+                    : ""
+            }
         </div>
     );
 };

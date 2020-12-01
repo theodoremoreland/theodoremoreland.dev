@@ -2,5 +2,13 @@
     overflow-y: scroll;
     background-color: rgb(209, 209, 209);
     color: rgb(26, 26, 26);
-    height: 90%;
+    height: 65vh;
+    width: 50vw;
+}
+
+.projectCard {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
