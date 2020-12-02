@@ -27,13 +27,6 @@ html, body {
     color: rgb(226, 226, 226);
 }
 
-.overlay {
-    background-color: #28313b9a;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-}
-
 .app {
     height: 100vh;
     width: 100vw;
@@ -41,7 +34,14 @@ html, body {
     align-items: center;
 }
 
-.profileCardContainer {
+.overlay {
+    background-color: #28313b9a;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content {
     margin-left: auto;
     margin-right: auto;
 }
