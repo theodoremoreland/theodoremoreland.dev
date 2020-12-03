@@ -1,9 +1,8 @@
 .timeline {
     display: flex;
     overflow-x: scroll;
-    background-color: rgb(209, 209, 209);
-    color: rgb(0, 0, 0);
     max-height: 75vh;
     width: 65vw;
+    color: rgb(0, 0, 0);
     background-color: rgba(240, 248, 255, 0);
 }

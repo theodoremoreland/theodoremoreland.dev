@@ -12,7 +12,7 @@ export default function Timeline(props) {
 
     return (
         <div className="timeline">
-            { projects.map(project => <Project projectData={project} />) }
+            { projects.map(project => <Project key={project.name} projectData={project} />) }
         </div>
     );
 };
