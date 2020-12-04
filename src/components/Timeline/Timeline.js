@@ -23,12 +23,12 @@ export default function Timeline(props) {
         const topicRegExp = new RegExp(`[^a-z]${topic}[^a-z]`, "g");
         const matches = allTopicsString.match(topicRegExp) || [];
         return (
-            [topic, matches.length]
+            {"value": topic, "count": matches.length}
         )
     });
-    const contexts = wordCloudData.filter(topic => ["professional","personal", "coursework"].includes(topic[0]));
-    const competencies = wordCloudData.filter(topic => ["web-development", "data-engineering", "data-analytics"].includes(topic[0]));
-    const languages = wordCloudData.filter(topic => ["python", "javascript", "java", "sql", "plpgsql", "vba", "bash", "html", "css"].includes(topic[0]));
+    const contexts = wordCloudData.filter(topic => ["professional","personal", "coursework"].includes(topic.value));
+    const competencies = wordCloudData.filter(topic => ["web-development", "data-engineering", "data-analytics"].includes(topic.value));
+    const languages = wordCloudData.filter(topic => ["python", "javascript", "java", "sql", "plpgsql", "vba", "bash", "html", "css"].includes(topic.value));
     const tools = wordCloudData.filter(topic => [
         "react"
         , "angular"
@@ -39,7 +39,7 @@ export default function Timeline(props) {
         , "material-ui"
         , "junit"
         , "unittest"
-        , "jasmine"
+        , "jasmine-framework"
         , "jest"
         , "pandas"
         , "matplotlib"
@@ -56,7 +56,7 @@ export default function Timeline(props) {
         , "excel"
         , "postgresql"
         , "mysql"
-    ].includes(topic[0]));
+    ].includes(topic.value));
 
     return (
         <>

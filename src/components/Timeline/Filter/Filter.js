@@ -1,24 +1,20 @@
 // React
-import React from 'react';
+import React, { useState } from 'react';
 
 // Bootstrap
-import Form from 'react-bootstrap/Form'
-import WordCloud from 'wordcloud';
+import Form from 'react-bootstrap/Form';
+import { TagCloud } from 'react-tagcloud';
+
 
 // Custom styles
 import './Filter.css';
 
 export default function Filter(props) {
     const { label, wordCloudData } = props;
+    const [showTagCloud, setShowTagCloud] = useState(false);
 
     const handleClick = () => {
-        WordCloud(document.getElementById('wordCloudCanvas'),
-            { 
-                list: wordCloudData,
-                weightFactor: 1,
-                rotateRatio: 0
-            } 
-        );
+        setShowTagCloud(!showTagCloud);
     };
 
     return (
@@ -33,7 +29,17 @@ export default function Filter(props) {
                 />
                 </Form.Group>
             </Form>
-            <canvas id="wordCloudCanvas"></canvas>
+            { showTagCloud
+                ?   <div id="wordCloudCanvas">
+                        <TagCloud
+                            minSize={12}
+                            maxSize={35}
+                            tags={wordCloudData}
+                            onClick={tag => alert(`'${tag.value}' was selected!`)}
+                        />
+                    </div>
+                : ""
+            }
         </>
     );
 };
