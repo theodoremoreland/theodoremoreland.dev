@@ -11,7 +11,7 @@ import './Filter.css';
 
 export default function Filter(props) {
     const { label, wordCloudData } = props;
-    const [showTagCloud, setShowTagCloud] = useState(false);
+    const [showWordCloud, setShowWordCloud] = useState(false);
 
     const options = {
         rotations: 0,
@@ -20,7 +20,7 @@ export default function Filter(props) {
       };
 
     const handleClick = () => {
-        setShowTagCloud(!showTagCloud);
+        setShowWordCloud(!showWordCloud);
     };
 
     return (
@@ -35,7 +35,7 @@ export default function Filter(props) {
                 />
                 </Form.Group>
             </Form>
-            { showTagCloud
+            { showWordCloud
                 ?   <div id="wordCloudCanvas">
                         <ReactWordcloud
                             words={wordCloudData}
