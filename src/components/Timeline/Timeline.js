@@ -23,12 +23,12 @@ export default function Timeline(props) {
         const topicRegExp = new RegExp(`[^a-z]${topic}[^a-z]`, "g");
         const matches = allTopicsString.match(topicRegExp) || [];
         return (
-            {"value": topic, "count": matches.length}
+            {"text": topic, "value": matches.length}
         )
     });
-    const contexts = wordCloudData.filter(topic => ["professional","personal", "coursework"].includes(topic.value));
-    const competencies = wordCloudData.filter(topic => ["web-development", "data-engineering", "data-analytics"].includes(topic.value));
-    const languages = wordCloudData.filter(topic => ["python", "javascript", "java", "sql", "plpgsql", "vba", "bash", "html", "css"].includes(topic.value));
+    const contexts = wordCloudData.filter(topic => ["professional","personal", "coursework"].includes(topic.text));
+    const competencies = wordCloudData.filter(topic => ["web-development", "data-engineering", "data-analytics"].includes(topic.text));
+    const languages = wordCloudData.filter(topic => ["python", "javascript", "java", "sql", "plpgsql", "vba", "bash", "html", "css"].includes(topic.text));
     const tools = wordCloudData.filter(topic => [
         "react"
         , "angular"
@@ -56,7 +56,7 @@ export default function Timeline(props) {
         , "excel"
         , "postgresql"
         , "mysql"
-    ].includes(topic.value));
+    ].includes(topic.text));
 
     return (
         <>

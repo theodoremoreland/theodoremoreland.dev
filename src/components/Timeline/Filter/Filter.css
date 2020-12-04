@@ -4,8 +4,9 @@
 }
 
 #wordCloudCanvas {
-    text-align: center;
     position: fixed;
     z-index: 2;
+    width: 40vw;
+    height: 40vh;
     background-color: rgb(255, 255, 255);
 }
