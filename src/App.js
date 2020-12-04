@@ -48,13 +48,14 @@ function App() {
   }, []);
 
   return (
+    <>
+    <div className="overlay" />
     <Container className="app" fluid={"xs"}>
-      <div className="overlay" />
       <Row className="content">
         <Col className="profileContainer" xs={3}>
           <Profile />
         </Col>
-        <Col className="timelineContainer" xs={9}>
+        <Col className="timelineContainer" xs={7}>
           {
             repos !== undefined
               ? <Timeline projects={repos}/>
@@ -63,6 +64,7 @@ function App() {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
 

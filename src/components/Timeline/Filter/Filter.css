@@ -1,0 +1,10 @@
+.filter {
+    flex-basis: content;
+    flex-shrink: 0;
+}
+
+#wordCloudCanvas {
+    position: fixed;
+    height: 50vh;
+    z-index: 2;
+}
