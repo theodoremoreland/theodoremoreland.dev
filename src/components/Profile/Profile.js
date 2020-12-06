@@ -22,10 +22,10 @@ export default function Profile() {
                 <Image className="profilePic" src={profilePic} roundedCircle fluid/>
                 <Row className="profileLinks" noGutters>
                     <Col>
-                        <a href="https://github.com/theodoremoreland" rel="noopener noreferrer" target="_blank">
+                        <a href="https://github.com/theodoremoreland" rel="noopener noreferrer" target="_blank" title="GitHub Profile">
                             <Image className="octocatIcon" src={octocatIcon} fluid/>
                         </a>
-                        <a href="https://www.linkedin.com/in/theodore-moreland/" rel="noopener noreferrer" target="_blank">
+                        <a href="https://www.linkedin.com/in/theodore-moreland/" rel="noopener noreferrer" target="_blank" title="LinkedIn Profile">
                             <Image className="linkedInIcon" src={linkedInIcon} fluid/>
                         </a>   
                     </Col>

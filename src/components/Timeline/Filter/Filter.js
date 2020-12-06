@@ -79,16 +79,26 @@ export default function Filter({filterComponentData}) {
                 onClick={() => handleClick()}
                 >
                 </DropdownButton>
-                <FormControl aria-describedby={`${label.toLowerCase()}FormGroup`} as="input" value={userSelectedTopicsForLabelString || `All ${label.toLowerCase()}`}/>
+                <FormControl 
+                    aria-describedby={`${label.toLowerCase()}FormGroup`}
+                    as="input"
+                    value={userSelectedTopicsForLabelString || `All ${label.toLowerCase()}`}
+                    disabled
+                />
             </InputGroup>
             { wordCloudsAreOpenObject[label]
-                ?   <div className="wordCloudCanvas" id={`${label.toLowerCase()}WordCloudCanvas`}>
-                        <ReactWordcloud
-                            words={wordCloudData}
-                            options={options}
-                            callbacks={callbacks}
-                        />
-                    </div>
+                ?   <>
+                        {/* The div: "notWordCloudCanvas" is used to mimic clickAway event such that the wordCloudCanvas closes
+                        when the user clicks something other than the filters or canvas itself. */}
+                        <div className="notWordCloudCanvas" onClick={() => setWordCloudsAreOpenObject({...wordCloudsAreOpenObject, [label]: false})}/>
+                        <div className="wordCloudCanvas" id={`${label.toLowerCase()}WordCloudCanvas`}>
+                            <ReactWordcloud
+                                words={wordCloudData}
+                                options={options}
+                                callbacks={callbacks}
+                            />
+                        </div>
+                    </>
                 : ""
             }
         </>

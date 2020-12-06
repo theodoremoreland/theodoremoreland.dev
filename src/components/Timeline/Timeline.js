@@ -98,6 +98,7 @@ export default function Timeline(props) {
             <div className="timeline">
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
+            <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
         </>
     );
 };
