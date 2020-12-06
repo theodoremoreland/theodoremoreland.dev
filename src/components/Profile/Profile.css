@@ -23,10 +23,10 @@
     font-family: accent;
 }
 
-.octocatIcon {
-    width: 80px;
+.octocatIcon, .linkedInIcon {
+    width: 60px;
 }
 
-.linkedInIcon {
-    width: 60px;
+.octocatIcon:hover, .linkedInIcon:hover {
+    width: 70px;
 }

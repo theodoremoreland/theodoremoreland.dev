@@ -25,8 +25,6 @@ export default function Profile() {
                         <a href="https://github.com/theodoremoreland" rel="noopener noreferrer" target="_blank">
                             <Image className="octocatIcon" src={octocatIcon} fluid/>
                         </a>
-                    </Col>
-                    <Col>
                         <a href="https://www.linkedin.com/in/theodore-moreland/" rel="noopener noreferrer" target="_blank">
                             <Image className="linkedInIcon" src={linkedInIcon} fluid/>
                         </a>   

@@ -52,8 +52,8 @@ export default function Timeline(props) {
                     const filterGroup = orderedFilterGroups[0];
 
                     for (const topic of filterGroup) {
-                        let projectsMathcingTopic = filteredProjectsArray.filter(project => project.topics.includes(topic));
-                        projectsMatchingFilterGroup = [...projectsMatchingFilterGroup, ...projectsMathcingTopic];
+                        let projectsMatchingTopic = filteredProjectsArray.filter(project => project.topics.includes(topic));
+                        projectsMatchingFilterGroup = [...projectsMatchingFilterGroup, ...projectsMatchingTopic];
                     }
         
                     filteredProjectsArray = projectsMatchingFilterGroup.length > 0 ? projectsMatchingFilterGroup : filteredProjectsArray;
