@@ -50,13 +50,15 @@ export default function Timeline(props) {
                 if (!processedLastFilterGroup) {
                     let projectsMatchingFilterGroup = [];
                     const filterGroup = orderedFilterGroups[0];
+                    const userDidNotSelectTopicForFilterGroup = filterGroup.length === 0;
 
                     for (const topic of filterGroup) {
                         let projectsMatchingTopic = filteredProjectsArray.filter(project => project.topics.includes(topic));
                         projectsMatchingFilterGroup = [...projectsMatchingFilterGroup, ...projectsMatchingTopic];
                     }
-        
-                    filteredProjectsArray = filterGroup.length === 0 ? filteredProjectsArray : projectsMatchingFilterGroup;
+                    
+                    // if user didn't select topic, assign everything filtered thus far, else assign updated filter even if now empty
+                    filteredProjectsArray = userDidNotSelectTopicForFilterGroup ? filteredProjectsArray : projectsMatchingFilterGroup;
                     orderedFilterGroups.shift();
                     return createFilteredProjectsArray(filteredProjectsArray, orderedFilterGroups);
                 }
