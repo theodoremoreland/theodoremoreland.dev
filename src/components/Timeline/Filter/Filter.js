@@ -13,23 +13,21 @@ let filtersToAdd = new Set();
 export default function Filter({filterComponentData}) {
     const { label
         , wordCloudData
-        , filtersCurrentlyInUse
         , setFiltersCurrentlyInUse
         , wordCloudsAreOpenObject
         , setWordCloudsAreOpenObject
     } = filterComponentData;
     const topicsForLabel = wordCloudData.map((data) => data.text);
-    const userSelectedTopicsForLabelString = [...filtersToAdd].filter((topic) => topicsForLabel.includes(topic)).join();
+    const userSelectedTopicsForLabelString = [...filtersToAdd].filter((topic) => topicsForLabel.includes(topic)).join(", ");
     
     const addOrRemoveTopicFromFilter = (userSelectedTopic) => {
         if (filtersToAdd.has(userSelectedTopic)) {
             filtersToAdd.delete(userSelectedTopic);
-            filtersCurrentlyInUse.delete(userSelectedTopic);
-            setFiltersCurrentlyInUse(new Set([...filtersCurrentlyInUse, ...filtersToAdd]));
+            setFiltersCurrentlyInUse(new Set([...filtersToAdd]));
         }
         else {
             filtersToAdd.add(userSelectedTopic);
-            setFiltersCurrentlyInUse(new Set([...filtersCurrentlyInUse, ...filtersToAdd]));
+            setFiltersCurrentlyInUse(new Set([...filtersToAdd]));
         }
     };
 
