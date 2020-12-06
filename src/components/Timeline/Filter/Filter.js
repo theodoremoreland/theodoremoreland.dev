@@ -2,7 +2,9 @@
 import React from 'react';
 
 // Bootstrap
-import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import ReactWordcloud from 'react-wordcloud';
 
 // Custom styles
@@ -32,6 +34,16 @@ export default function Filter({filterComponentData}) {
     };
 
     const options = {
+        colors: [
+            '#bdbdbd'
+            , '#969696'
+            , '#737373'
+            , '#878787'
+            , '#525252'
+            , '#252525'
+            , '#1a1a1a'
+            , '#000000' 
+        ],
         rotations: 0,
         padding: 0,
         fontSizes: [12, 82],
@@ -58,16 +70,17 @@ export default function Filter({filterComponentData}) {
 
     return (
         <>
-            <Form className="filter">
-                <Form.Group controlId={`${label.toLowerCase()}FormGroup`} onClick={() => handleClick()}>
-                <Form.Label>{label}</Form.Label>
-                <Form.Control
-                    as="input"
-                    custom
-                    value={userSelectedTopicsForLabelString || `All ${label.toLowerCase()}`} 
-                />
-                </Form.Group>
-            </Form>
+            <InputGroup className="filter">
+                <DropdownButton
+                as={InputGroup.Prepend}
+                variant="outline-secondary"
+                title={label}
+                id={`${label.toLowerCase()}DropdownButton`}
+                onClick={() => handleClick()}
+                >
+                </DropdownButton>
+                <FormControl aria-describedby={`${label.toLowerCase()}FormGroup`} as="input" value={userSelectedTopicsForLabelString || `All ${label.toLowerCase()}`}/>
+            </InputGroup>
             { wordCloudsAreOpenObject[label]
                 ?   <div className="wordCloudCanvas" id={`${label.toLowerCase()}WordCloudCanvas`}>
                         <ReactWordcloud

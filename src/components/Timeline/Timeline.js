@@ -88,7 +88,7 @@ export default function Timeline(props) {
                             , setWordCloudsAreOpenObject
                         };
                         return (
-                            <Col key={`${label.toLowerCase()}FilterColumn`}>
+                            <Col key={`${label.toLowerCase()}FilterColumn`} xs={6}>
                                 <Filter key={`${label.toLowerCase()}Filter`} filterComponentData={filterComponentData} />
                             </Col>
                         );

@@ -1,17 +1,23 @@
 .filter {
     flex-basis: content;
     flex-shrink: 0;
+    margin-bottom: 25px;
 }
 
 .wordCloudCanvas {
     position: fixed;
     font-family: header !important;
-    z-index: 2;
+    z-index: 10;
     width: 50vw;
     height: 50vh;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+[id$='DropdownButton'] {
+    color: rgb(255, 255, 255);
+    background-color: rgba(240, 248, 255, 0);
 }
 
 [id^='tippy'] {

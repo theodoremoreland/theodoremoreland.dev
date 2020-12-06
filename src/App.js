@@ -55,7 +55,7 @@ function App() {
         <Col className="profileContainer" xs={3}>
           <Profile />
         </Col>
-        <Col className="timelineContainer" xs={7}>
+        <Col className="timelineContainer" xs={9}>
           {
             repos !== undefined
               ? <Timeline projects={repos}/>

@@ -3,8 +3,11 @@
     overflow-x: scroll;
     height: 60vh;
     max-height: 1280px;
-    width: 65vw;
+    width: 100%;
     max-width: 1980px;
     color: rgb(0, 0, 0);
     background-color: rgba(240, 248, 255, 0);
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
 }
