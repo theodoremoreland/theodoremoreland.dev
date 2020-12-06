@@ -56,7 +56,7 @@ export default function Timeline(props) {
                         projectsMatchingFilterGroup = [...projectsMatchingFilterGroup, ...projectsMatchingTopic];
                     }
         
-                    filteredProjectsArray = projectsMatchingFilterGroup.length > 0 ? projectsMatchingFilterGroup : filteredProjectsArray;
+                    filteredProjectsArray = filterGroup.length === 0 ? filteredProjectsArray : projectsMatchingFilterGroup;
                     orderedFilterGroups.shift();
                     return createFilteredProjectsArray(filteredProjectsArray, orderedFilterGroups);
                 }

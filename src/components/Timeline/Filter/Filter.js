@@ -20,7 +20,7 @@ export default function Filter({filterComponentData}) {
         , setWordCloudsAreOpenObject
     } = filterComponentData;
     const topicsForLabel = wordCloudData.map((data) => data.text);
-    const userSelectedTopicsForLabelString = [...filtersToAdd].filter((topic) => topicsForLabel.includes(topic)).join(" + ");
+    const userSelectedTopicsForLabelString = [...filtersToAdd].filter((topic) => topicsForLabel.includes(topic)).join(" or ");
     
     const addOrRemoveTopicFromFilter = (userSelectedTopic) => {
         if (filtersToAdd.has(userSelectedTopic)) {
