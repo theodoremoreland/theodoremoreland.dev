@@ -9,7 +9,7 @@
 }
 
 .profilePic {
-    box-shadow: rgba(204, 204, 204, 0.4) 0px 0px 0px 2px, rgba(175, 175, 175, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.856) 0px 1px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 250px;
 }
 
