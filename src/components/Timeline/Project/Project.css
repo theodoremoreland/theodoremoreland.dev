@@ -1,5 +1,6 @@
 .projectCard {
     min-width: 350px;
+    max-width: 350px;
     background-color: #3d485300;
     background-image: linear-gradient(315deg, #3d485394 0%, #1d242c8f 74%);
     color: rgb(224, 224, 224);

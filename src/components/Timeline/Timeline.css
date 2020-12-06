@@ -1,7 +1,7 @@
 .timeline {
     display: flex;
     overflow-x: scroll;
-    height: 50vh;
+    height: 60vh;
     max-height: 1280px;
     width: 65vw;
     max-width: 1980px;

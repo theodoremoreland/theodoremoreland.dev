@@ -38,16 +38,41 @@ export default function Timeline(props) {
     const filterTopics = useCallback(() => {
         if ([...filtersCurrentlyInUse].length > 0) {
             let filteredProjectsSet = new Set();
-            for (const topic of filtersCurrentlyInUse) {
-                const filteredProjectsArray = projects.filter(project => project.topics.includes(topic));
-                filteredProjectsArray.forEach(project => filteredProjectsSet.add(project));
-            }
+            const contextFilters = wordCloudData["contexts"].map(data => data.text).filter((topic) => filtersCurrentlyInUse.has(topic));
+            const competencyFilters = wordCloudData["competencies"].map(data => data.text).filter((topic) => filtersCurrentlyInUse.has(topic));
+            const languageFilters = wordCloudData["languages"].map(data => data.text).filter((topic) => filtersCurrentlyInUse.has(topic));
+            const toolFilters = wordCloudData["tools"].map(data => data.text).filter((topic) => filtersCurrentlyInUse.has(topic));
+            const orderedFilterGroups = [contextFilters, competencyFilters, languageFilters, toolFilters]; // List filters in terms of heirarchy
+
+            const createFilteredProjectsArray = (filteredProjectsArray, orderedFilterGroups) => {
+                const processedLastFilterGroup = orderedFilterGroups.length === 0;
+
+                if (!processedLastFilterGroup) {
+                    let projectsMatchingFilterGroup = [];
+                    const filterGroup = orderedFilterGroups[0];
+
+                    for (const topic of filterGroup) {
+                        let projectsMathcingTopic = filteredProjectsArray.filter(project => project.topics.includes(topic));
+                        projectsMatchingFilterGroup = [...projectsMatchingFilterGroup, ...projectsMathcingTopic];
+                    }
+        
+                    filteredProjectsArray = projectsMatchingFilterGroup.length > 0 ? projectsMatchingFilterGroup : filteredProjectsArray;
+                    orderedFilterGroups.shift();
+                    return createFilteredProjectsArray(filteredProjectsArray, orderedFilterGroups);
+                }
+                else {
+                    return filteredProjectsArray;
+                }
+            };
+
+            const filteredProjectsArray = createFilteredProjectsArray(projects, orderedFilterGroups);
+            filteredProjectsArray.forEach(project => filteredProjectsSet.add(project));
             return [...filteredProjectsSet];
         }
         else {
             return projects;
         }
-    }, [projects, filtersCurrentlyInUse]);
+    }, [projects, wordCloudData, filtersCurrentlyInUse]);
 
     return (
         <>
