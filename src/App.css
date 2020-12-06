@@ -43,3 +43,11 @@ html, body {
     margin-right: auto;
     flex-wrap: wrap
 }
+
+.timelineSpinner {
+    display: block;
+    height: 40rem;
+    width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+}

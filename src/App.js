@@ -6,6 +6,7 @@ import { Octokit } from "@octokit/core";
 
 // Bootstrap
 import { Container, Col, Row } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 
 // Custom Components
 import Profile from './components/Profile/Profile';
@@ -59,7 +60,7 @@ function App() {
           {
             repos !== undefined
               ? <Timeline projects={repos}/>
-              : ""
+              : <Spinner className="timelineSpinner" animation="grow"/>
           }
         </Col>
       </Row>
