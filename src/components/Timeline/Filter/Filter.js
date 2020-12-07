@@ -88,9 +88,9 @@ export default function Filter({filterComponentData}) {
             </InputGroup>
             { wordCloudsAreOpenObject[label]
                 ?   <>
-                        {/* The div: "notWordCloudCanvas" is used to mimic clickAway event such that the wordCloudCanvas closes
+                        {/* The div: "clickAwayArea" is used to mimic clickAway event such that the wordCloudCanvas closes
                         when the user clicks something other than the filters or canvas itself. */}
-                        <div className="notWordCloudCanvas" onClick={() => setWordCloudsAreOpenObject({...wordCloudsAreOpenObject, [label]: false})}/>
+                        <div className="clickAwayArea" onClick={() => setWordCloudsAreOpenObject({...wordCloudsAreOpenObject, [label]: false})}/>
                         <div className="wordCloudCanvas" id={`${label.toLowerCase()}WordCloudCanvas`}>
                             <ReactWordcloud
                                 words={wordCloudData}

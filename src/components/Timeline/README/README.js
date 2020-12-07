@@ -24,8 +24,7 @@ export default function README({name, link, readmeIsActive, setReadmeIsActive}) 
                     ? "This project does not currently feature a README.md file."
                     : text
                 text = text
-                        .replace(imgURLRegex, `https://raw.githubusercontent.com/theodoremoreland/${name}/master/presentation/`)
-                        .replace(imgWidthRegex, `width="100">`);
+                        .replace(imgURLRegex, `https://raw.githubusercontent.com/theodoremoreland/${name}/master/presentation/`);
                 setReadmeString(text);
             })
             .catch(err => console.log(err));
@@ -37,13 +36,18 @@ export default function README({name, link, readmeIsActive, setReadmeIsActive}) 
         <>
         {
             readmeIsActive
-                ?   <Alert
-                        className="readme"
-                        onClose={() => setReadmeIsActive(false)}
-                        dismissible
-                    >
-                        <ReactMarkdown allowDangerousHtml children={readmeString}/>
-                    </Alert>
+                ?   <>
+                        {/* The div: "clickAwayArea" is used to mimic clickAway event such that the readme closes
+                        when the user clicks something other than the readme itself. */}
+                        <div className="clickAwayArea" onClick={() => setReadmeIsActive(false)}/>
+                        <Alert
+                            className="readme"
+                            onClose={() => setReadmeIsActive(false)}
+                            dismissible
+                        >
+                            <ReactMarkdown allowDangerousHtml children={readmeString}/>
+                        </Alert>
+                    </>
                 : ""
         }
         </>

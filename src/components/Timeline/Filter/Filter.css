@@ -16,18 +16,6 @@
     box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.notWordCloudCanvas {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /* background-color: rgba(37, 37, 37, 0.493);
-    filter: blur(8px);
-    -webkit-filter: blur(8px); */
-}
-
 [id$='FilterDropdownButton'] {
     color: rgb(255, 255, 255);
     background-color: rgba(240, 248, 255, 0);

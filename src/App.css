@@ -44,6 +44,18 @@ html, body {
     flex-wrap: wrap
 }
 
+.clickAwayArea {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(37, 37, 37, 0.493);
+    filter: blur(8px);
+    -webkit-filter: blur(8px); */
+}
+
 .timelineSpinner {
     display: block;
     height: 40rem;
