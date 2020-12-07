@@ -27,6 +27,8 @@ const getLastUpdatedDateInDaysString = (previousDataString) => {
 export default function Project(props) {
     const { projectData } = props;
 
+    console.log(projectData.demo_link);
+
     return (
         <Card className="projectCard">
             <Card.Img className="projectImage" variant="bottom" src={projectData.image} />
@@ -45,6 +47,11 @@ export default function Project(props) {
                         {getLastUpdatedDateInDaysString(projectData.date_updated)}
                     </Col>
                 </Row>
+                {
+                    projectData.demo_link !== "" && projectData.demo_link !== null
+                        ?   <Card.Link href={projectData.demo_link} target="_blank" rel="noopener noreferrer">Live Demo</Card.Link>
+                        :   ""
+                }
             </Card.Body>
         </Card>
     );
