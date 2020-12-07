@@ -8,6 +8,9 @@ import { Octokit } from "@octokit/core";
 import { Container, Col, Row } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 
+// Scripts
+import covertDateToISOString from './scripts/convertDateToISOString';
+
 // Custom Components
 import Profile from './components/Profile/Profile';
 import Timeline from './components/Timeline/Timeline';
@@ -37,8 +40,11 @@ function App() {
                 "name": repo.name,
                 "url": repo.html_url,
                 "desc": repo.description,
+                "date_created": covertDateToISOString(repo.created_at),
+                "date_updated":  covertDateToISOString(repo.pushed_at),
                 "topics": repo.topics,
-                "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`
+                "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`,
+                "size": repo.size
               })
           )
         );
