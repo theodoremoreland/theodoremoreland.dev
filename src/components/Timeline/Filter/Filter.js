@@ -75,7 +75,7 @@ export default function Filter({filterComponentData}) {
                 as={InputGroup.Prepend}
                 variant="outline-secondary"
                 title={label}
-                id={`${label.toLowerCase()}DropdownButton`}
+                id={`${label.toLowerCase()}FilterDropdownButton`}
                 onClick={() => handleClick()}
                 >
                 </DropdownButton>

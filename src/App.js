@@ -44,7 +44,7 @@ function App() {
                 "date_updated":  covertDateToISOString(repo.pushed_at),
                 "topics": repo.topics,
                 "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`,
-                "size": repo.size,
+                "size": Number(repo.size),
                 "demo_link": repo.homepage
               })
           )

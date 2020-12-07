@@ -10,6 +10,7 @@ import createWordCloudData from './createWordCloudData';
 // Custom Components
 import Project from './Project/Project';
 import Filter from './Filter/Filter';
+import SortButtonGroup from './SortButtonGroup/SortButtonGroup';
 
 // Custom styles
 import './Timeline.css';
@@ -19,6 +20,12 @@ const filterLabels = [
     "Competencies",
     "Languages",
     "Tools"
+];
+
+const sortOptions = [
+    "date_created",
+    "date_updated",
+    "size",
 ];
 
 const createWordCloudsAreOpenObject = () => {
@@ -34,6 +41,35 @@ export default function Timeline(props) {
     const [filtersCurrentlyInUse, setFiltersCurrentlyInUse] = useState([]);
     const wordCloudData = useMemo(() => createWordCloudData(projects), [projects]);
     const [wordCloudsAreOpenObject, setWordCloudsAreOpenObject] = useState(createWordCloudsAreOpenObject);
+    const [sortValue, setSortValue] = useState({"name": sortOptions[0], "direction": "desc"});
+
+    // eslint-disable-next-line
+    const sortProjects = useMemo(() => {
+        // useMemo executes this function every time sortValue or projects change
+        // but because .sort works inplace, there is no need to reassign projects
+        const name = sortValue.name;
+        const dir = sortValue.direction;
+        
+        if (name === "date_created" && dir === "desc") {
+            projects.sort((a, b) => new Date(a[name]) < new Date(b[name]));
+        }
+        else if (name === "date_created" && dir === "asc") {
+            projects.sort((a, b) => new Date(a[name]) > new Date(b[name]));
+        }
+        else if (name === "date_updated" && dir === "desc") {
+            projects.sort((a, b) => new Date(a[name]) < new Date(b[name]));
+        }
+        else if (name === "date_updated" && dir === "asc") {
+            projects.sort((a, b) => new Date(a[name]) > new Date(b[name]));
+        }
+        else if (name === "size" && dir === "desc") {
+            projects.sort((a, b) => a[name] < b[name]);
+        }
+        else if (name === "size" && dir === "asc") {
+            projects.sort((a, b) => a[name] > b[name]);
+        };
+    }, [sortValue, projects]);
+
 
     const filterTopics = useCallback(() => {
         if ([...filtersCurrentlyInUse].length > 0) {
@@ -76,6 +112,7 @@ export default function Timeline(props) {
         }
     }, [projects, wordCloudData, filtersCurrentlyInUse]);
 
+
     return (
         <>
             <Row>
@@ -100,7 +137,15 @@ export default function Timeline(props) {
             <div className="timeline">
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
-            <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
+            <Row>
+                <Col>
+                    <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
+                </Col>
+                <Col>
+                    <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>
+                </Col>
+            </Row>
+            
         </>
     );
 };
