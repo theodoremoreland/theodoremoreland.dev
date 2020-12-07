@@ -12,6 +12,14 @@
     max-height: 200px;
 }
 
+.infoIcon {
+    color: rgb(0, 119, 255);
+}
+
+.infoIcon:hover {
+    font-size: larger;
+}
+
 .projectDates {
     font-size: medium;
     font-family: accent;

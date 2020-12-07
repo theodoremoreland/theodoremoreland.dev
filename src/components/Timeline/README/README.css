@@ -1,0 +1,11 @@
+.readme {
+    position: fixed;
+    z-index: 4;
+    overflow-y: auto;
+    height: 70vh;
+    width: 60vw;
+    border-radius: 4px;
+    font-family: accent;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}

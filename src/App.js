@@ -45,7 +45,8 @@ function App() {
                 "topics": repo.topics,
                 "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`,
                 "size": Number(repo.size),
-                "demo_link": repo.homepage
+                "demo_link": repo.homepage,
+                "readme": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/README.md`
               })
           )
         );
