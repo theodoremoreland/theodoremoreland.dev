@@ -1,6 +1,6 @@
 // React
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 // Bootstrap
 import Card from 'react-bootstrap/Card';
@@ -34,29 +34,34 @@ export default function Project(props) {
     return (
         <>
             <Card className="projectCard">
-                <Card.Img className="projectImage" variant="bottom" src={projectData.image} />
+                <Card.Img className="projectImage" variant="top" src={projectData.image} />
                 <Card.Body>
                     <Card.Title>
                         {projectData.name} <text className="infoIcon" onClick={() => setReadmeIsActive(true)}>&#x1F6C8;</text>
                     </Card.Title>
-                    <Card.Text>
+                    <Card.Text className="projectDesc">
                         {projectData.desc}
                     </Card.Text>
-                    <Row className="projectDates">
-                        <Col>
-                            Date created: {`${projectData.date_created}`}
-                        </Col>
-                    </Row>
-                    <Row className="projectDates">
-                        <Col>
-                            {getLastUpdatedDateInDaysString(projectData.date_updated)}
-                        </Col>
-                    </Row>
                     {
                         projectData.demo_link !== "" && projectData.demo_link !== null
-                            ?   <Card.Link href={projectData.demo_link} target="_blank" rel="noopener noreferrer">Live Demo</Card.Link>
+                            ?   <Card.Link
+                                    className="demoLinks"
+                                    href={projectData.demo_link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Live Demo
+                                </Card.Link>
                             :   ""
                     }
+                    <footer className="projectFooter">
+                        <Col className="projectDates">
+                            Date created: {`${projectData.date_created}`}
+                        </Col>
+                        <Col className="projectDates">
+                            {getLastUpdatedDateInDaysString(projectData.date_updated)}
+                        </Col>
+                    </footer>
                 </Card.Body>
             </Card>
             <README

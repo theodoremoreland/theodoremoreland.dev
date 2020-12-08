@@ -20,8 +20,20 @@
     font-size: larger;
 }
 
+.projectDesc {
+    flex-grow: 1;
+}
+
+.projectFooter {
+    position: absolute;
+    bottom: 15px;
+}
+
 .projectDates {
     font-size: medium;
     font-family: accent;
     color: rgb(255, 255, 255);
+    margin-left: 0%;
+    margin-right: auto;
 }
+

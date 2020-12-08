@@ -14,7 +14,6 @@ import './README.css';
 export default function README({name, link, readmeIsActive, setReadmeIsActive}) {
     const [readmeString, setReadmeString] = useState(undefined);
     const imgURLRegex = new RegExp("presentation/", "g");
-    const imgWidthRegex = new RegExp(`width="*"*>`, "g");
 
     const fetchReadme = () => {
         fetch(link)
