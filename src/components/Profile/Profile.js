@@ -31,7 +31,7 @@ export default function Profile() {
                     </Col>
                 </Row>
                 <Card.Text className="profileBio">
-                    Some stuff about me.
+                    I am as passionate about software development as I am action-adventure Anime, action oriented video games, and sports.
                 </Card.Text>
             </Card.Body>
         </Card>

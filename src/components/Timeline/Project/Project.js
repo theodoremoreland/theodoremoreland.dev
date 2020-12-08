@@ -37,7 +37,7 @@ export default function Project(props) {
                 <Card.Img className="projectImage" variant="top" src={projectData.image} />
                 <Card.Body>
                     <Card.Title>
-                        {projectData.name} <text className="infoIcon" onClick={() => setReadmeIsActive(true)}>&#x1F6C8;</text>
+                        {projectData.name} <span className="infoIcon" onClick={() => setReadmeIsActive(true)}>&#x1F6C8;</span>
                     </Card.Title>
                     <Card.Text className="projectDesc">
                         {projectData.desc}
@@ -56,10 +56,13 @@ export default function Project(props) {
                     }
                     <footer className="projectFooter">
                         <Col className="projectDates">
-                            Date created: {`${projectData.date_created}`}
+                            Date created: {`${new Date(projectData.date_created).toLocaleDateString()}`}
                         </Col>
                         <Col className="projectDates">
                             {getLastUpdatedDateInDaysString(projectData.date_updated)}
+                        </Col>
+                        <Col className="projectSizes">
+                            {projectData.size.toLocaleString()}kb
                         </Col>
                     </footer>
                 </Card.Body>

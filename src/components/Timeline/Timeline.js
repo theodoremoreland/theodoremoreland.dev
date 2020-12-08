@@ -138,10 +138,10 @@ export default function Timeline(props) {
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
             <Row>
-                <Col>
+                <Col xs={2}>
                     <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
                 </Col>
-                <Col>
+                <Col xs={{ span: 7, offset: 3 }}>
                     <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>
                 </Col>
             </Row>

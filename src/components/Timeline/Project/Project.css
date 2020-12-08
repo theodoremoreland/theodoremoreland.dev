@@ -26,12 +26,21 @@
 
 .projectFooter {
     position: absolute;
+    left: 0;
     bottom: 15px;
 }
 
 .projectDates {
     font-size: medium;
     font-family: accent;
+    color: rgb(255, 255, 255);
+    margin-left: 0%;
+    margin-right: auto;
+}
+
+.projectSizes {
+    font-size: medium;
+    font-family: accent-light;
     color: rgb(255, 255, 255);
     margin-left: 0%;
     margin-right: auto;

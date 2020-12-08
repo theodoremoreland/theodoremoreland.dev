@@ -35,7 +35,7 @@ function App() {
           }
         });
         
-        setRepos(response.data.map( repo => (
+        const repoDataArray = response.data.map(repo => (
               {
                 "name": repo.name,
                 "url": repo.html_url,
@@ -44,12 +44,13 @@ function App() {
                 "date_updated":  covertDateToISOString(repo.pushed_at),
                 "topics": repo.topics,
                 "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`,
-                "size": Number(repo.size),
                 "demo_link": repo.homepage,
-                "readme": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/README.md`
+                "readme": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/README.md`,
+                "size": Number(repo.size)
               })
-          )
-        );
+          );
+
+      setRepos(repoDataArray);
   };
 
   useEffect(() => {

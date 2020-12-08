@@ -15,7 +15,7 @@ import './SortButtonGroup.css';
 const optionTransmuter = {
     "date_created": "Date Created",
     "date_updated": "Date Updated",
-    "size": "Project Size"
+    "size": "Cumulative File Size"
 };
 
 export default function SortButtonGroup(props) {
@@ -33,6 +33,7 @@ export default function SortButtonGroup(props) {
                 {
                     sortOptions.map(option => 
                         <DropdownButton
+                            key={`${optionTransmuter[option]}Dropdown`}
                             as={InputGroup.Append}
                             title={optionTransmuter[option]}
                             id="bg-nested-dropdown"
