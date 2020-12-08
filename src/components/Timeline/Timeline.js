@@ -127,7 +127,7 @@ export default function Timeline(props) {
                             , setWordCloudsAreOpenObject
                         };
                         return (
-                            <Col key={`${label.toLowerCase()}FilterColumn`} xs={6}>
+                            <Col key={`${label.toLowerCase()}FilterColumn`} xs={12} md={6}>
                                 <Filter key={`${label.toLowerCase()}Filter`} filterComponentData={filterComponentData} />
                             </Col>
                         );
@@ -138,10 +138,10 @@ export default function Timeline(props) {
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
             <Row>
-                <Col xs={2}>
+                <Col xs={12} md={2}>
                     <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
                 </Col>
-                <Col xs={{ span: 7, offset: 3 }}>
+                <Col xs={12} md={{ span: 7, offset: 3 }}>
                     <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>
                 </Col>
             </Row>

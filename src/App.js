@@ -62,10 +62,10 @@ function App() {
     <div className="overlay" />
     <Container className="app" fluid={"xs"}>
       <Row className="content">
-        <Col className="profileContainer" xs={2}>
+        <Col className="profileContainer" xs={12} md={2}>
           <Profile />
         </Col>
-        <Col className="timelineContainer" xs={10}>
+        <Col className="timelineContainer" xs={12} md={10}>
           {
             repos !== undefined
               ? <Timeline projects={repos}/>

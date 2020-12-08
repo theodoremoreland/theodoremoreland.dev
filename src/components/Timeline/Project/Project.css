@@ -22,6 +22,7 @@
 
 .projectDesc {
     flex-grow: 1;
+    font-size: 0.9em;
 }
 
 .projectFooter {
@@ -34,15 +35,11 @@
     font-size: medium;
     font-family: accent;
     color: rgb(255, 255, 255);
-    margin-left: 0%;
-    margin-right: auto;
 }
 
 .projectSizes {
     font-size: medium;
     font-family: accent-light;
     color: rgb(255, 255, 255);
-    margin-left: 0%;
-    margin-right: auto;
 }
 
