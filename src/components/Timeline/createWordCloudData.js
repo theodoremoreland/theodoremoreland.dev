@@ -45,6 +45,9 @@ export default function createWordCloudData(projects) {
         , "excel"
         , "postgresql"
         , "mysql"
+        , "sqlalchemy"
+        , "pymongo"
+        , "psycopg2"
     ];
 
     const contextsWordCloudData = wordCloudData.filter(topic => contexts.includes(topic.text));
