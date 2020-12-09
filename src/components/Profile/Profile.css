@@ -46,7 +46,10 @@
 @media (min-width: 992px) { 
     .profileBio {
         font-size: 0.8em;
-    }    
+    }
+    .octocatIcon, .linkedInIcon {
+        width: 40px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

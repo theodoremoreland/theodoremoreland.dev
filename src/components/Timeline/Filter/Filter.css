@@ -40,14 +40,18 @@
     
     .wordCloudCanvas {
         display: block;
-        position: fixed;
+        position: absolute;
         font-family: header !important;
         z-index: 3;
-        width: 50vw;
-        height: 50vh;
+        width: 70vw;
+        height: 60vh;
         border-radius: 4px;
         background-color: rgb(255, 255, 255);
         box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    #competenciesWordCloudCanvas, #toolsWordCloudCanvas {
+        left: -300px;
     }
 
     [id$='FilterDropdownButton'] {
@@ -67,5 +71,8 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
-    
+    .wordCloudCanvas {
+        width: 50vw;
+        height: 50vh;
+    }
 }

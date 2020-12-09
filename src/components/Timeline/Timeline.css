@@ -43,9 +43,8 @@
 
     .timeline {
         height: 60vh;
-        max-height: 1280px;
+        max-height: 750px;
         width: 100%;
-        max-width: 1980px;
     }
 
     .selectedSortValueSmallScreenOnly {

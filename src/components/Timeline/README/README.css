@@ -4,6 +4,8 @@
     overflow-y: auto;
     height: 75vh;
     width: 90vw;
+    max-height: 1080px;
+    max-width: 1080px;
     border-radius: 4px;
     font-family: accent;
     color: black;
