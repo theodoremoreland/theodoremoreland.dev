@@ -24,7 +24,8 @@ export default function SortButtonGroup(props) {
     return (
         <>
             <InputGroup className="sortButtonGroup">
-                <FormControl 
+                <FormControl
+                    className="sortButtonGroupTextField"
                     aria-describedby="bg-nested-dropdown"
                     as="input"
                     value={`Sort by: ${optionTransmuter[sortValue.name]} (${sortValue.direction})`}
