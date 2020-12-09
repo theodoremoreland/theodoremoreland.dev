@@ -134,7 +134,7 @@ export default function Timeline(props) {
                             , setWordCloudsAreOpenObject
                         };
                         return (
-                            <Col key={`${label.toLowerCase()}FilterColumn`} xs={12} md={6}>
+                            <Col key={`${label.toLowerCase()}FilterColumn`} xs={12} md={12} lg={6}>
                                 <Filter key={`${label.toLowerCase()}Filter`} filterComponentData={filterComponentData} />
                             </Col>
                         );
@@ -150,13 +150,13 @@ export default function Timeline(props) {
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
             <Row className="sortButtonGroupContainer">
-                <Col xs={4} md={2}>
+                <Col xs={4} md={4} lg={2}>
                     <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
                 </Col>
-                <Col xs={8} md={2} className="textSmallScreenOnly">
+                <Col xs={8} md={{ span: 4, offset: 4 }} lg={2} className="selectedSortValueSmallScreenOnly">
                     <h5>by {`${optionTransmuter[sortValue.name]} (${sortValue.direction})`}</h5>
                 </Col>
-                <Col xs={12} md={{ span: 7, offset: 3 }}>
+                <Col xs={12} md={12} lg={{ span: 12, offset: 0 }} xl={{ span: 9, offset: 1 }}>
                     <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>
                 </Col>
             </Row>

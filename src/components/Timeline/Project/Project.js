@@ -23,7 +23,7 @@ const getLastUpdatedDateInDaysString = (previousDataString) => {
     const dayDifference = timeDifference / (1000 * 3600 * 24);
     const stringEnd = dayDifference === 0
         ? "today"
-        : (dayDifference === 1 ? `${dayDifference} day ago` : `${dayDifference} days ago`);
+        : (dayDifference === 1 ? `yesterday` : `${dayDifference} days ago`);
     return `Last updated ${stringEnd}`;
 };
 

@@ -12,14 +12,14 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-    .sortButtonGroupTextField {
-        display: flex;
-    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    
+    .sortButtonGroupTextField {
+        display: flex;
+    }    
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

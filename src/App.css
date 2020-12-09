@@ -21,15 +21,16 @@ html, body {
     background-color: #000000;
     background-image: url('./images/bg4.jpg');
     background-position: center;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-size: cover;
+    background-attachment: fixed;
     font-family: header;
     color: rgb(226, 226, 226);
 }
 
 .overlay {
     background-color: #28313b9a;
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
 }
@@ -72,14 +73,11 @@ html, body {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-    .textSmallScreenOnly {
-        display: none;
-    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

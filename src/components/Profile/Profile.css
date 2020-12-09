@@ -21,6 +21,7 @@
 .profileBio {
     margin-top: 25px;
     font-family: accent;
+    font-size: 1em;
 }
 
 .octocatIcon, .linkedInIcon {
@@ -38,14 +39,14 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    .profileBio {
-        font-size: 0.7em;
-    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    
+    .profileBio {
+        font-size: 0.8em;
+    }    
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
