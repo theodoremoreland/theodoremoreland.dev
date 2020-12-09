@@ -156,7 +156,7 @@ export default function Timeline(props) {
                 <Col xs={8} md={{ span: 4, offset: 4 }} lg={2} className="selectedSortValueSmallScreenOnly">
                     <h5>by {`${optionTransmuter[sortValue.name]} (${sortValue.direction})`}</h5>
                 </Col>
-                <Col xs={12} md={12} lg={{ span: 12, offset: 0 }} xl={{ span: 9, offset: 1 }}>
+                <Col xs={12} md={12} xl={{ span: 8, offset: 2 }} xxl={{ span: 5, offset: 5 }}>
                     <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>
                 </Col>
             </Row>
