@@ -1,35 +1,71 @@
+.filtersContainer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
 .filter {
     flex-basis: content;
     flex-shrink: 0;
     margin-bottom: 25px;
-    z-index: 2;
 }
 
 .wordCloudCanvas {
-    position: fixed;
-    font-family: header !important;
-    z-index: 3;
-    width: 50vw;
-    height: 50vh;
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-[id$='FilterDropdownButton'] {
-    color: rgb(255, 255, 255);
-    background-color: rgba(240, 248, 255, 0);
-}
-
-.filter .dropdown-menu.show {
     display: none;
 }
 
-[id^='tippy'] {
-    color: black;
-    font-size: x-large;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .filtersContainer {
+        position: relative;
+    }
+
+    .filter {
+        z-index: 2;
+    }
+
+    .filter .dropdown-menu.show {
+        display: none;
+    }
+    
+    .wordCloudCanvas {
+        display: block;
+        position: fixed;
+        font-family: header !important;
+        z-index: 3;
+        width: 50vw;
+        height: 50vh;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.952) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    [id$='FilterDropdownButton'] {
+        color: rgb(255, 255, 255);
+        background-color: rgba(240, 248, 255, 0);
+    }
+    
+    [id^='tippy'] {
+        color: black;
+        font-size: x-large;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    
 }

@@ -1,13 +1,55 @@
+.timelineContainer {
+    padding-bottom: 300px;
+}
+
+.header {
+    font-family: header;
+    text-align: center;
+}
+
 .timeline {
     display: flex;
     overflow-x: scroll;
-    height: 60vh;
-    max-height: 1280px;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 700px;
     width: 100%;
-    max-width: 1980px;
     color: rgb(0, 0, 0);
     background-color: rgba(240, 248, 255, 0);
     border-style: solid;
     border-width: 1px;
     border-color: white;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .timelineContainer {
+        padding-bottom: 0px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .timeline {
+        height: 60vh;
+        max-height: 1280px;
+        width: 100%;
+        max-width: 1980px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    
 }

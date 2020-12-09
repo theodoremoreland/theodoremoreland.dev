@@ -28,6 +28,13 @@ const sortOptions = [
     "size",
 ];
 
+// Converts appearance of sort option for Front-end
+const optionTransmuter = {
+    "date_created": "Date Created",
+    "date_updated": "Date Updated",
+    "size": "Cumulative File Size"
+};
+
 const createWordCloudsAreOpenObject = () => {
     const wordCloudsAreOpenObject = {};
     for (const label of filterLabels) {
@@ -49,25 +56,25 @@ export default function Timeline(props) {
         // but because .sort works inplace, there is no need to reassign projects
         const name = sortValue.name;
         const dir = sortValue.direction;
-        
-        if (name === "date_created" && dir === "desc") {
-            projects.sort((a, b) => new Date(a[name]) < new Date(b[name]));
-        }
-        else if (name === "date_created" && dir === "asc") {
-            projects.sort((a, b) => new Date(a[name]) > new Date(b[name]));
-        }
-        else if (name === "date_updated" && dir === "desc") {
-            projects.sort((a, b) => new Date(a[name]) < new Date(b[name]));
-        }
-        else if (name === "date_updated" && dir === "asc") {
-            projects.sort((a, b) => new Date(a[name]) > new Date(b[name]));
-        }
-        else if (name === "size" && dir === "desc") {
-            projects.sort((a, b) => a[name] < b[name]);
-        }
-        else if (name === "size" && dir === "asc") {
-            projects.sort((a, b) => a[name] > b[name]);
+
+        const compare = (a, b) => {
+            a = name.slice(0,4) === "date" ? new Date(a) : a;
+            b = name.slice(0,4) === "date" ? new Date(b) : b;
+
+            if (dir === "asc") {
+                if (a > b) { return 1; }
+                else if (b > a) { return -1; }
+            }
+            else {
+                if (a < b) { return 1; }
+                else if (b < a) { return -1; }
+            }
+
+            return 0;
         };
+        
+        projects.sort((a, b) => compare(a[name], b[name]));
+
     }, [sortValue, projects]);
 
 
@@ -115,7 +122,7 @@ export default function Timeline(props) {
 
     return (
         <>
-            <Row>
+            <Row className="filtersContainer">
                 {
                     filterLabels.map((label) => {
                         const filterComponentData = {
@@ -134,12 +141,20 @@ export default function Timeline(props) {
                     })
                 }
             </Row>
+            <Row>
+                <Col>
+                    <h2 className="header">{"Projects"}</h2>
+                </Col>
+            </Row>
             <div className="timeline">
                 { filterTopics(filtersCurrentlyInUse).map(project => <Project key={project.name} projectData={project} />) }
             </div>
-            <Row>
-                <Col xs={12} md={2}>
+            <Row className="sortButtonGroupContainer">
+                <Col xs={4} md={2}>
                     <h5>{`${filterTopics(filtersCurrentlyInUse).length} results`}</h5>
+                </Col>
+                <Col xs={8} md={2} className="textSmallScreenOnly">
+                    <h5>by {`${optionTransmuter[sortValue.name]} (${sortValue.direction})`}</h5>
                 </Col>
                 <Col xs={12} md={{ span: 7, offset: 3 }}>
                     <SortButtonGroup sortOptions={sortOptions} sortValue={sortValue} setSortValue={setSortValue}/>

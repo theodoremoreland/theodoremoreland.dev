@@ -5,6 +5,7 @@ import React from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
 import ReactWordcloud from 'react-wordcloud';
 
 // Custom styles
@@ -46,7 +47,7 @@ export default function Filter({filterComponentData}) {
         ],
         rotations: 0,
         padding: 0,
-        fontSizes: [12, 82],
+        fontSizes: [12, 65],
         fontFamily: "header"
     };
 
@@ -78,7 +79,19 @@ export default function Filter({filterComponentData}) {
                 id={`${label.toLowerCase()}FilterDropdownButton`}
                 onClick={() => handleClick()}
                 >
+                {
+                    topicsForLabel.map(topic => 
+                        <Dropdown.Item
+                            key={`${topic}DropdownItem`}
+                            eventKey={topic}
+                            onSelect={(topic) => addOrRemoveTopicFromFilter(topic)}
+                        >
+                            {topic}
+                        </Dropdown.Item>
+                    )
+                }
                 </DropdownButton>
+
                 <FormControl 
                     aria-describedby={`${label.toLowerCase()}FormGroup`}
                     as="input"
