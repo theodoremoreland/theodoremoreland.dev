@@ -7,6 +7,23 @@
     color: rgb(224, 224, 224);
 }
 
+.projectCardOverlay {
+    color: #404141d2;
+    border-color: #1d242c8f;
+    border-width: 1px;
+    font-size: 1em;
+    font-family: header;
+}
+
+.projectCardOverlay:hover {
+    color: rgb(0, 98, 255);
+    font-size: 1.5em;
+}
+
+.projectCardBody {
+    z-index: 1;
+}
+
 .projectImage {
     min-height: 200px;
     max-height: 200px;

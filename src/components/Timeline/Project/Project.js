@@ -35,7 +35,10 @@ export default function Project(props) {
         <>
             <Card className="projectCard">
                 <Card.Img className="projectImage" variant="top" src={projectData.image} />
-                <Card.Body>
+                <a href={projectData.url} target="_blank" rel="noopener noreferrer">
+                    <Card.ImgOverlay className="projectCardOverlay">View on GitHub</Card.ImgOverlay>
+                </a>
+                <Card.Body className="projectCardBody">
                     <Card.Title>
                         {projectData.name} <span className="infoIcon" onClick={() => setReadmeIsActive(true)}>&#x1F6C8;</span>
                     </Card.Title>
