@@ -8,16 +8,21 @@
 }
 
 .projectCardOverlay {
-    color: #404141d2;
-    border-color: #1d242c8f;
-    border-width: 1px;
+    color: #00000059;
     font-size: 1em;
     font-family: header;
+    font-weight: 900;
+    text-align: center;
+}
+
+.projectCardOverlay > h3 {
+    margin-top: 50px;
 }
 
 .projectCardOverlay:hover {
     color: rgb(0, 98, 255);
     font-size: 1.5em;
+    background-color: #242b31d7;
 }
 
 .projectCardBody {

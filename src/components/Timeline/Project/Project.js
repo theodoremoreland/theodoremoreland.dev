@@ -36,7 +36,9 @@ export default function Project(props) {
             <Card className="projectCard">
                 <Card.Img className="projectImage" variant="top" src={projectData.image} />
                 <a href={projectData.url} target="_blank" rel="noopener noreferrer">
-                    <Card.ImgOverlay className="projectCardOverlay">View on GitHub</Card.ImgOverlay>
+                    <Card.ImgOverlay className="projectCardOverlay">
+                        <h3>View on GitHub</h3>
+                    </Card.ImgOverlay>
                 </a>
                 <Card.Body className="projectCardBody">
                     <Card.Title>
