@@ -1,6 +1,7 @@
 .projectCard {
     min-width: 350px;
-    max-width: 500px;
+    max-width: 600px;
+    width: 24vw;
     height: 100%;
     background-color: #3d485300;
     background-image: linear-gradient(315deg, #3d485394 0%, #1d242c8f 74%);
@@ -30,8 +31,9 @@
 }
 
 .projectImage {
-    min-height: 200px;
-    max-height: 200px;
+    height: 18vh;
+    min-height: 190px;
+    max-height: 250px;
 }
 
 .infoIcon {

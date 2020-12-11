@@ -72,7 +72,9 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
     .wordCloudCanvas {
-        width: 50vw;
-        height: 50vh;
+        width: 60vw;
+        height: 55vh;
+        max-width: 800px;
+        max-height: 500px;
     }
 }
