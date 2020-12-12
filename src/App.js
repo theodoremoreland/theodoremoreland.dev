@@ -6,7 +6,6 @@ import { Octokit } from "@octokit/core";
 
 // Bootstrap
 import { Container, Col, Row } from 'react-bootstrap';
-import Spinner from 'react-bootstrap/Spinner';
 
 // Scripts
 import covertDateToISOString from './scripts/convertDateToISOString';
@@ -14,6 +13,7 @@ import covertDateToISOString from './scripts/convertDateToISOString';
 // Custom Components
 import Profile from './components/Profile/Profile';
 import Timeline from './components/Timeline/Timeline';
+import TimelineLoadingScreen from './components/Timeline/LoadingScreen/LoadingScreen';
 
 // Custom Styles
 import './App.css';
@@ -69,7 +69,7 @@ function App() {
           {
             repos !== undefined
               ? <Timeline projects={repos}/>
-              : <Spinner className="timelineSpinner" animation="grow"/>
+              : <TimelineLoadingScreen />
           }
         </Col>
       </Row>
