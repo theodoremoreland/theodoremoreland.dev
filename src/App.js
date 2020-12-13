@@ -35,8 +35,8 @@ function App() {
           }
         });
         
-        const repoDataArray = response.data.map(repo => (
-              {
+        const repoDataArray = response.data.reduce((repos, repo) => {
+              const repoData = {
                 "name": repo.name,
                 "url": repo.html_url,
                 "desc": repo.description,
@@ -47,8 +47,11 @@ function App() {
                 "demo_link": repo.homepage,
                 "readme": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/README.md`,
                 "size": Number(repo.size)
-              })
-          );
+              }
+
+              if (repoData.topics.length > 0) { return [...repos, repoData]; }
+              else { return repos; };
+            }, []);
 
       setRepos(repoDataArray);
   };
