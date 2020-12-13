@@ -61,7 +61,9 @@ export default function Filter({filterComponentData}) {
     const handleClick = () => {
         const shouldOpenWordCloud = !wordCloudsAreOpenObject[label];
 
-        if (shouldOpenWordCloud) {
+        // word clouds should only render on screens with a width greater than 991px...
+        // ...the CSS should correspond by setting the wordcloud to display = none until > 991px
+        if (shouldOpenWordCloud && window.innerWidth > 991) {
             // The following statement closes all wordclouds in shallow copy
             Object.keys(wordCloudsAreOpenObject).forEach((key) => wordCloudsAreOpenObject[key] = false);
             // The next statement sets shallow copy, then opens active wordcloud
