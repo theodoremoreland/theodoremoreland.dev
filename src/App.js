@@ -43,7 +43,7 @@ function App() {
                 "date_created": covertDateToISOString(repo.created_at),
                 "date_updated":  covertDateToISOString(repo.pushed_at),
                 "topics": repo.topics,
-                "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/1.PNG`,
+                "image": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/presentation/thumbnail.png`,
                 "demo_link": repo.homepage,
                 "readme": `https://raw.githubusercontent.com/theodoremoreland/${repo.name}/master/README.md`,
                 "size": Number(repo.size)
