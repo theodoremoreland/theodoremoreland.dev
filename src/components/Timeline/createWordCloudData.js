@@ -17,7 +17,7 @@ export default function createWordCloudData(projects) {
 
     const contexts = ["professional","personal", "coursework"];
     const competencies = ["web-development", "data-engineering", "data-analytics"];
-    const languages = ["python", "javascript", "java", "sql", "plpgsql", "vba", "bash", "html", "css"];
+    const languages = ["python", "javascript", "java", "typescript", "sql", "plpgsql", "vba", "bash", "html", "css"];
     const tools = [
         "react"
         , "angular"
