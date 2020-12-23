@@ -1,12 +1,11 @@
 // React
 import React, { useEffect, useState } from 'react';
-import { Alert } from 'react-bootstrap';
 
 // Other
 import ReactMarkdown from 'react-markdown/with-html';
 
 // Bootstrap
-// import Alert from 'react-bootstrap/Alert'
+import Alert from 'react-bootstrap/Alert';
 
 // Custom Styles
 import './README.css';

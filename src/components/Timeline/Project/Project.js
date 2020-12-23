@@ -4,6 +4,11 @@ import { Col } from 'react-bootstrap';
 
 // Bootstrap
 import Card from 'react-bootstrap/Card';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip'
+
+// Icons
+import { BsFileRichtext } from "react-icons/bs";
 
 // Scripts
 import covertDateToISOString from '../../../scripts/convertDateToISOString';
@@ -31,6 +36,12 @@ export default function Project(props) {
     const { projectData } = props;
     const [readmeIsActive, setReadmeIsActive] = useState(false);
 
+    const renderTooltip = (props) => (
+        <Tooltip id="readmeTooltip" {...props}>
+            Click to view README.md file
+        </Tooltip>
+    );
+
     return (
         <>
             <Card className="projectCard">
@@ -42,7 +53,19 @@ export default function Project(props) {
                 </a>
                 <Card.Body className="projectCardBody">
                     <Card.Title>
-                        {projectData.name} <span className="infoIcon" onClick={() => setReadmeIsActive(true)}>&#x1F6C8;</span>
+                        {projectData.name}
+                        <span
+                            className="infoIcon"
+                            onClick={() => setReadmeIsActive(true)}
+                        >
+                            <OverlayTrigger
+                                placement="right"
+                                delay={{ show: 200, hide: 200 }}
+                                overlay={renderTooltip}
+                            >
+                                <BsFileRichtext />
+                            </OverlayTrigger>
+                        </span>
                     </Card.Title>
                     <Card.Text className="projectDesc">
                         {projectData.desc}

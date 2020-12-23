@@ -36,8 +36,11 @@
     max-height: 250px;
 }
 
-.infoIcon {
+.infoIcon svg {
     color: rgb(0, 119, 255);
+    vertical-align: text-top;
+    left: 5px;
+    position: relative;
 }
 
 .infoIcon:hover {
