@@ -26,6 +26,7 @@ export default function createWordCloudData(projects) {
         , "spring-boot"
         , "bootstrap"
         , "material-ui"
+        , "semantic-ui"
         , "junit"
         , "unittest"
         , "jasmine-framework"
@@ -35,19 +36,13 @@ export default function createWordCloudData(projects) {
         , "d3"
         , "plotly"
         , "jupyter-notebook"
-        , "aws"
-        , "cloudfront"
-        , "s3"
         , "docker"
         , "splinter"
-        , "selenium"
         , "alexa"
         , "excel"
         , "postgresql"
         , "mysql"
-        , "sqlalchemy"
-        , "pymongo"
-        , "psycopg2"
+        , "mongodb"
     ];
 
     const contextsWordCloudData = wordCloudData.filter(topic => contexts.includes(topic.text));

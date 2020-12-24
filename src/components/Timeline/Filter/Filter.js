@@ -36,13 +36,13 @@ export default function Filter({filterComponentData}) {
 
     const options = {
         colors: [
-            '#bdbdbd'
-            , '#969696'
-            , '#737373'
-            , '#878787'
-            , '#494949'
-            , '#525252'
-            , '#313131'
+            '#0576fd'
+            , '#0669df'
+            , '#125fbb'
+            , '#1c5190'
+            , '#244a78'
+            , '#283f5a'
+            , '#242b31'
             , '#2c2b2b'
             , '#252525'
             , '#1a1a1a'
