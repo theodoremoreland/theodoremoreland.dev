@@ -8,7 +8,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip'
 
 // Icons
-import { BsFileRichtext } from "react-icons/bs";
+import { RiFolderInfoFill } from "react-icons/ri";
 
 // Scripts
 import covertDateToISOString from '../../../scripts/convertDateToISOString';
@@ -17,6 +17,7 @@ import covertDateToISOString from '../../../scripts/convertDateToISOString';
 import README from '../README/README';
 
 // Custom styles
+import alt from '../../../images/under-construction-thumbnail.jpg';
 import './Project.css';
 
 const getLastUpdatedDateInDaysString = (previousDataString) => {
@@ -45,7 +46,19 @@ export default function Project(props) {
     return (
         <>
             <Card className="projectCard">
-                <Card.Img className="projectImage" variant="top" src={projectData.image} />
+                <Card.Img
+                    className="projectImage"
+                    variant="top"
+                    src={projectData.image} 
+                    alt={""}
+                    onError={
+                        (e) => {
+                            if (e.target.src !== alt) { 
+                                e.target.src = alt;
+                            }; 
+                        }
+                    } 
+                />
                 <a href={projectData.url} target="_blank" rel="noopener noreferrer">
                     <Card.ImgOverlay className="projectCardOverlay">
                         <h3>View on GitHub</h3>
@@ -63,7 +76,7 @@ export default function Project(props) {
                                 delay={{ show: 200, hide: 200 }}
                                 overlay={renderTooltip}
                             >
-                                <BsFileRichtext />
+                                <RiFolderInfoFill />
                             </OverlayTrigger>
                         </span>
                     </Card.Title>
