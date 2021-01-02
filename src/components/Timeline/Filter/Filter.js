@@ -36,21 +36,19 @@ export default function Filter({filterComponentData}) {
 
     const options = {
         colors: [
-            '#0576fd'
-            , '#0669df'
+             '#4292c6'
+            , '#2171b5'
+            , '#0576fd'
             , '#125fbb'
-            , '#1c5190'
             , '#244a78'
-            , '#283f5a'
-            , '#242b31'
+            , '#08306b'
             , '#2c2b2b'
-            , '#252525'
             , '#1a1a1a'
             , '#000000' 
         ],
         rotations: 0,
         padding: 0,
-        fontSizes: [12, 65],
+        fontSizes: [20, 60],
         fontFamily: "header"
     };
 
