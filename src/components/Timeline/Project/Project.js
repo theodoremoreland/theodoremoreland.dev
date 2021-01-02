@@ -8,7 +8,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip'
 
 // Icons
-import { RiFolderInfoFill } from "react-icons/ri";
+import { RiQuestionnaireLine } from "react-icons/ri";
 
 // Scripts
 import covertDateToISOString from '../../../scripts/convertDateToISOString';
@@ -76,7 +76,7 @@ export default function Project(props) {
                                 delay={{ show: 200, hide: 200 }}
                                 overlay={renderTooltip}
                             >
-                                <RiFolderInfoFill />
+                                <RiQuestionnaireLine />
                             </OverlayTrigger>
                         </span>
                     </Card.Title>
